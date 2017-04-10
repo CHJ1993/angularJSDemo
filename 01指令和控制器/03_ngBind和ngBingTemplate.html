@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/angular.min.js"></script>
+</head>
+<body>
+<!--
+    {{ }} 表达式:底层实现就是ng-bind内置指令,{{}} 使用的时候注意angular引入顺序,
+     如果使用" ng-bind  "指令就不会出现之中效果
+
+    ng-bing-template 指令: 后面可以直接一个表达式
+
+-->
+    <div ng-init="name='Mr. CHEN';age=23">
+        <h1>{{name+ " and "+ age}}</h1>
+        <h1>{{name}} and {{age}}</h1>
+        <h1 ng-bind="name + ' and ' +age"></h1>
+        <h1 ng-bind-template="{{name + ' and '+ age}}"></h1>
+    </div>
+</body>
+</html>

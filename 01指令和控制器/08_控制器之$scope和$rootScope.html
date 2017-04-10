@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="lesson">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/angular.min.js"></script>
+    <script>
+        /*
+         * $scope 是angular的一个内置服务,这个服务可以在当前控制器存贮内容,想要使用
+         * 必须要"依赖注入"
+         *
+         * */
+        angular.module('lesson', [])
+            .controller('MainController', ['$scope', '$rootScope', function ($scope, $rootScope) {
+                /*
+                 在当前控制器的作用域下绑定一个变量叫做name
+                 整个name就会和View上该作用域下的name进行双向关联
+                 */
+                $scope.name = 'Mr. CHEN';
+                $scope.changeName = function () {
+                    console.log('===============');
+                    console.log($scope.name);
+                };
+                $rootScope.department='angular';
+            }])
+            .controller('SecondController', ['$scope', function ($scope) {
+                $scope.name = 'Ms Lin';
+                $scope.person = {
+                    userName:"小黑"
+                }
+            }])
+    </script>
+</head>
+<body>
+<div ng-controller="MainController">
+    <input type="text" ng-model="name" ng-change="changeName()">
+    <h1>{{name}}</h1>
+</div>
+<div ng-controller="SecondController">
+    <input type="text" ng-model="name" ng-change="changeName()">
+    <h1>{{name}}</h1><br>
+    <input type="text" ng-model="person.userName" ng-change="changeName()"><br>
+    <h1>{{person.userName}} root  {{department}}</h1>
+</div>
+</body>
+</html>

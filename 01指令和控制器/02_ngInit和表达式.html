@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/angular.min.js"></script>
+</head>
+<body>
+<!--
+    ng-init指令:用来初始化一个全局变量(angular程序中),是以键值对的形式生命的,如果生命多个变量,
+    变量之间用分号隔开
+    之后从新定义的相同的属性 会覆盖掉之前的属性,会改变页面中所有相同变量的值,
+    因为angular 会先检查所有操作再进行页面渲染
+
+    表达式: 用" {{  }}" 表示
+        特性:
+            1.可以直接访问对象的属性
+            2.可以通过下标访问数组的元素,进行基本的运算
+            3.可以使用某些生JS方法
+-->
+<div ng-init="name='Mr. CHEN';person={name:'Mrs LIN',age:22};arr=[20,10] ">
+    <h1>{{name}}</h1>
+    <h1>{{person.name}}</h1>
+    <h1>{{person.name+ arr[1]}}</h1>
+
+    <div>
+        <h1>{{name}}</h1>
+        <input type="text" ng-model="name">
+        <h1>{{name}}</h1>
+    </div>
+</div>
+</body>
+</html>

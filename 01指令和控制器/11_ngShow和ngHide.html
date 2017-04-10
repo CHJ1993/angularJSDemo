@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="lesson">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/angular.min.js"></script>
+    <script>
+        angular.module('lesson',[])
+            .controller('MainController',['$scope',function ($scope) {
+                var self = this;
+                self.flag = true;
+                $scope.changeFlag = function () {
+                    self.flag = !self.flag;
+                }
+            }])
+    </script>
+</head>
+<!--
+    ng-show 指令:通过boolean值判断是否显示 True 显示 False 隐藏
+    ng-hide 指令: 于ng-show一样 也是通过boolean 值进行判断是否隐藏 True 隐藏 False 显示
+
+-->
+<body ng-controller="MainController as ctrl">
+<input type="button" value="{{ctrl.flag}}" ng-click="changeFlag()"><br>
+<h1 ng-show="ctrl.flag">show:{{ctrl.flag}}</h1>
+<h1 ng-hide="ctrl.flag">hide:{{ctrl.flag}}</h1>
+</body>
+</html>

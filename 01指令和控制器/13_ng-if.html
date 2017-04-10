@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="lesson">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/angular.min.js"></script>
+    <script>
+        angular.module('lesson',[])
+            .controller('MainController',['$scope',function ($scope) {
+                var self = this;
+                self.flag = true;
+            }])
+    </script>
+</head>
+<body ng-controller="MainController as ctrl">
+<input type="button" value="切换页面" ng-click="ctrl.flag = !ctrl.flag">
+<h1 ng-if="ctrl.flag">page1:{{ctrl.flag}}</h1>
+<h1 ng-if="!ctrl.flag">page2:{{ctrl.flag}}</h1>
+</body>
+</html>

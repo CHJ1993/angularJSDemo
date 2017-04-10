@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="lesson">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/angular.min.js"></script>
+    <style>
+        .class1{
+            color: red;
+        }
+        .class2{
+            color: blue;
+        }
+    </style>
+    <script>
+        angular.module('lesson', [])
+            .controller('MainController', ['$scope', function ($scope) {
+                    var self = this;
+                    /*普通数组*/
+                    self.nameArr = ['达康书记','达康书记','育良书记','陈海局长','瑞金书记'];
+                    /*对象*/
+                    self.person={
+                        name:'Mr. CHEN',
+                        age:23
+                    };
+                    /*对象数组*/
+                    self.persons = [
+                        {name:'凤九',age:18},
+                        {name:'白浅',age:20},
+                        {name:'墨渊',age:21},
+                        {name:'东华',age:23}
+                    ];
+                    /*跨元素数组*/
+                    self.movies = [
+                        {
+                            label:'速8',
+                            title:'N0.1'
+                        },
+                        {
+                            label:'金刚',
+                            title:'N0.2'
+                        },
+                        {
+                            label:'生化危机6',
+                            title:'N0.3'
+                        },
+                        {
+                            label:'电锯惊魂8',
+                            title:'N0.4'
+                        }
+                    ]
+            }])
+    </script>
+</head>
+<body ng-controller="MainController as ctrl">
+    <!--
+        ng-repeat指令:
+            循环创建某个元素,或者元素块
+        在JS中数组的元素是可以重复的,但是在angularJS中如果数组中存在重复元素,
+        直接使用 ng-repeat='item in arr' 是会出错的,所以需要在后面加
+        track by $index
+    -->
+    <h1>普通数组</h1>
+    <ul>
+        <li ng-class="{true:'class1',false:'class2'}[$odd]" ng-repeat="name in ctrl.nameArr track by $index">序号: {{$index+1}} 姓名 :{{name}}</li>
+    </ul>
+    <h1>对象</h1>
+    <ul>
+        <li ng-repeat="(key,value) in ctrl.person">{{key}}:{{value}}</li>
+    </ul>
+    <h1>对象数组</h1>
+    <ul>
+        <li ng-repeat="temp in ctrl.persons">
+            <span>姓名 :{{temp.name}}</span>
+            <span>年龄 :{{temp.age}}</span>
+        </li>
+    </ul>
+    <h1>跨元素数组</h1>
+    <table border="1" cellspacing="0" cellpadding="0">
+        <tr ng-repeat-start="item in ctrl.movies">
+            <td>{{item.title}}</td>
+        </tr>
+        <tr>
+            <td>很多奇葩东西</td>
+        </tr>
+        <tr ng-repeat-end>
+            <td>{{item.label}}</td>
+        </tr>
+    </table>
+</body>
+</html>

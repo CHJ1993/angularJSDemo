@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/angular.min.js"></script>
+</head>
+<body>
+<!--
+    ng-list 指令:输入的时候会变成一个数组,默认的情况是一个数组
+        使用逗号',' 进行数组的分割
+        如果想自定义元素分割,给ng-list赋值,
+        多个分割符号直接连在一起会认为会被忽略
+
+-->
+input your name:<input type="text" ng-model="msg" ng-list=";"><br>
+hello <span>{{msg}}</span>
+</body>
+</html>

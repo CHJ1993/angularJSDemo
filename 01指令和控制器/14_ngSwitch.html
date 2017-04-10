@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="lesson">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/angular.min.js"></script>
+    <script>
+        angular.module('lesson', [])
+            .controller('MainController', ['$scope', function ($scope) {
+                var self = this;
+                self.pageName = 'page1';
+                $scope.changePage = function (pagename) {
+                    self.pageName = pagename;
+                }
+            }])
+    </script>
+</head>
+<!--
+    ng-switch 用法:
+        ng-switch on='': 相当于平时JS switch()
+            ng-switch-when: 相当于平时JS case
+            ng-switch-default: 相当于平时JS case
+
+
+-->
+<body ng-controller="MainController as ctrl">
+<input type="button" value="page1" ng-click="changePage('page1')">
+<input type="button" value="page2" ng-click="changePage('page2')">
+<input type="button" value="page3" ng-click="changePage('page3')">
+<input type="button" value="pageohter" ng-click="changePage('otherpage')">
+
+<div ng-switch on="ctrl.pageName">
+    <h1 ng-switch-when="page1">{{ctrl.pageName}}</h1>
+    <h1 ng-switch-when="page2">{{ctrl.pageName}}</h1>
+    <h1 ng-switch-when="page3">{{ctrl.pageName}}</h1>
+    <h1 ng-switch-default>{{ctrl.pageName}}</h1>
+</div>
+</body>
+</html>

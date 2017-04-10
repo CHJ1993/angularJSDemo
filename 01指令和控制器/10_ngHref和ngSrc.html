@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="lesson">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/angular.min.js"></script>
+    <script>
+        angular.module('lesson', [])
+            .controller('MainController', [function () {
+                var self = this;
+                self.obj = {
+                    href:'https://www.baidu.com',
+                    src:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=511112865,703424929&fm=11&gp=0.jpg'
+                }
+            }]);
+    </script>
+</head>
+<body ng-controller="MainController as ctrl">
+    <a ng-href="{{ctrl.obj.href}}">{{ctrl.obj.href}}</a>
+    <img ng-src="{{ctrl.obj.src}}" alt="">
+</body>
+</html>

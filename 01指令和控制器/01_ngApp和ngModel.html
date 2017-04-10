@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/angular.min.js"></script>
+    <style>
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<!--
+    ng-app:指令 告诉程序的哪一步是有angularJS 管理的 ,是angular 入口,整个程序应该只有一个入口
+    angularJS很灵活,并没有局限于一个项目中移动那个要全部使用angularJS  ,我们可以在想使用的区域去指定整个指令
+
+
+-->
+<h1>AngularJS  Hello world</h1>
+<h2>hello  : <span>{{1+2}}</span></h2>
+<h2>hello : <span>{{'world'}}</span></h2>
+<hr>
+<h1>原生操作某个功能</h1>
+<input type="text" id="js_out">
+<h2 id="js_h2"></h2>
+<script>
+    var jsInput = document.querySelector('#js_out');
+    var jsH2 = document.querySelector("#js_h2");
+    jsInput.oninput = function () {
+        jsH2.innerHTML = this.value;
+    }
+</script>
+<hr>
+<h1>angularJS实现上面的功能</h1>
+<input type="text" ng-model="msg">
+<h2>{{msg}}</h2>
+</body>
+</html>

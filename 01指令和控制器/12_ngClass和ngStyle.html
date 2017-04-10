@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="lesson">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/angular.min.js"></script>
+    <style>
+        .class1{
+            color: red;
+        }
+        .class2{
+            color: blue;
+        }
+        .class3{
+            color: green;
+        }
+
+    </style>
+    <script>
+        angular.module('lesson',[])
+            .controller('MainController',['$scope',function ($scope) {
+                var self = this;
+                self.flag = true;
+                self.clazz='class1';
+                $scope.changColor = function (clazz) {
+                    self.clazz = clazz;
+                }
+            }])
+    </script>
+</head>
+<body ng-controller="MainController as mc">
+<input type="button" value="切换样式" ng-click="mc.flag = !mc.flag">
+<!--
+    ng-class 指令: 设置class
+    ng-class="{true:'class1',false:'class2'}[mc.flag]
+    这句是说 根据 mc.flag的值来判断,如果true 设置class1 false 设置 class2
+
+    ng-class="clazz" 直接根据属性这是类
+-->1
+<h1 ng-class="{true:'class1',false:'class2'}[mc.flag]">{{mc.flag}}</h1>
+
+<input type="button" value="红色" ng-click="changColor('class1')">
+<input type="button" value="蓝色" ng-click="changColor('class2')">
+<input type="button" value="绿色" ng-click="changColor('class3')">
+<h1 ng-class="mc.clazz">我是什么颜色?</h1>
+</body>
+</html>

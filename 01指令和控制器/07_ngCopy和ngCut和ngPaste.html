@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/angular.min.js"></script>
+</head>
+<body>
+<!--
+    ng-copy 指令:当当前元素内容内copy的时候会触发
+    ng-cut :当当前元素的内容被剪切的时候触发
+    ng-paste
+-->
+<h1 ng-init="copyCount=0" ng-copy="copyCount = copyCount +1">copy me !</h1><br>
+copyCount:{{copyCount}}<br>
+<input ng-init="cutCount=0" ng-cut="cutCount = cutCount +1" value="cut me!"><br>
+cutCount:{{cutCount}}<br>
+<input ng-init="pasteCount=0" ng-paste="pasteCount = pasteCount +1" value="paste something!"><br>
+pasteCount:{{pasteCount}}
+</body>
+</html>

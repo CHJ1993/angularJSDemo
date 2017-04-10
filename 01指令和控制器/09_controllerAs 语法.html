@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="lesson">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/angular.min.js"></script>
+    <script>
+        angular.module('lesson', [])
+            .controller('firstControl', ['$scope',function ($scope) {
+                //这里的this就是当前控制器对象,也就是view上的别名
+                var self = this;
+                self.name = 'Mr. CHEN';
+                $scope.name='Ms Lin';
+                $scope.fn = function () {
+                    console.log(self.name);
+//                    console.log("==========");
+                }
+            }]);
+    </script>
+</head>
+<body>
+<!--
+    firstControl 是控制器名字
+    f_ctrl是控制器实例,和$scope原理一样,只不过变量存储在当前控制器的实例下
+-->
+<div ng-controller="firstControl as f_ctrl">
+    <h1>{{f_ctrl.name}}</h1><br>
+    <input type="text" ng-model="f_ctrl.name" ng-change="fn()">
+    <h1>{{name}}</h1>
+</div>
+<div ng-controller="firstControl as f_ctrl2">
+    <h1>{{f_ctrl2.name}}</h1><br>
+    <input type="text" ng-model="f_ctrl2.name" ng-change="fn()">
+    <h1>{{name}}</h1>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/angular.min.js"></script>
+    <script>
+        /*创建myApp的主入口实例
+         *   module():
+         *       参数一:跟ng-app指令的值相等
+         *       参数二:依赖其他模块组,可以没有依赖
+         *   controller():创建一个控制器
+         *       参数一:控制器名称 跟 ng-controller指令的值相等
+         *       参数二:一个数组,包含依赖的库的名称,还有一个处理方法如果没有任何依赖,可以省略中括号,
+         *          但是尽量不要省略,如果省略以后代码压缩可能会出现问题
+         * */
+//        var myApp = angular.module('myApp', []);
+//
+//        myApp.controller('MainController', [function ($scope) {
+//            console.log('我是控制器---达康书记');
+//        }]);
+//        console.log(myApp);
+
+        angular.module('myApp',[])
+            .controller('MainController',[function () {
+                console.log('链式写法的控制器--侯亮平局长');
+            }]);
+    </script>
+</head>
+<body ng-controller="MainController">
+
+</body>
+</html>
