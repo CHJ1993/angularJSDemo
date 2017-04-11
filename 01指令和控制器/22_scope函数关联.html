@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="lesson">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/angular.min.js"></script>
+    <script>
+        angular.module('lesson',[])
+            .controller('MainControl',['$scope',function ($scope) {
+                $scope.ctrlContent='hello Mr. CHEN';
+//                $scope.name = "Mr. CHEN";
+                $scope.sayHello = function (name) {
+                    console.log('Hi ,',name,'!');
+                }
+            }])
+            .directive('myDire',[function () {
+                return{
+                    restrict:'E',
+//                    replace:true,
+                    scope:{
+                        say:'&'
+                    },
+                    /*
+                    *   say()方法就是作用域下的sayHello()方法,
+                    *   需要一个参数,不过我们在调用该方法的时候需要传入的是一个对象,
+                    *   形参就是对象的某个属性,实参就是属性的值
+                    *
+                    * */
+                    template:'<div><input type="text" ng-model="userName">' +
+                    '<input type="button" value="sayBtn" ng-click="say({name:userName})"></div>'
+                }
+            }])
+    </script>
+</head>
+<body>
+<div ng-controller="MainControl">
+    <my-dire  say="sayHello(name)"></my-dire>
+    <my-dire  say="sayHello(name)"></my-dire>
+    <my-dire  say="sayHello(name)"></my-dire>
+</div>
+</body>
+</html>
