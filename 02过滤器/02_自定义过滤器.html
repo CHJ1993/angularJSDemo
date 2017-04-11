@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="lesson">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/angular.min.js"></script>
+    <script>
+        angular.module('lesson', [])
+            .controller('MainController', ['$scope', function ($scope) {
+                var self = this;
+                self.str = 'sdgsdag22332rdfasdf3588ewr32588325klgkajg3e943lksj4lkkk3llk';
+            }])
+            /*
+             * 自定义过滤器
+             *  filter('过滤器名称',[依赖,处理函数])
+             *  处理函数需要返回一个函数
+             * */
+            .filter('filterNum', [function () {
+                //需要返回一个函数　才能处理程序
+                return function(str){
+                    /*
+                    * 形参str是要过滤的字符串
+                    * 例如：'abcdefdsf1234dfa'｜filterNum
+                    * str即是　'abcdefdsf1234dfa'
+                    * */
+                    return str.replace(/([0-9])/g,'');
+                }
+            }])
+    </script>
+</head>
+<body ng-controller="MainController as ctrl">
+    <h1>使用自定义过滤器(字符串中过滤数字)</h1>
+    <h2>{{ctrl.str|filterNum}}</h2>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="lesson">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/angular.min.js"></script>
+    <script>
+        angular.module('lesson',[])
+            .controller('MainControl',['$scope',function ($scope) {
+                $scope.ctrlContent='hello Mr. CHEN';
+            }])
+            .directive('myDire',[function () {
+                return{
+                    restrict:'E',
+                    replace:true,
+                    scope:{
+                        content:'=',
+                        text:'=txt'
+                    },
+                    template:'<div><input type="text" ng-model="content"><br>' +
+                    '<p>{{text}}</p>' +
+                    '</div>'
+                }
+            }])
+    </script>
+</head>
+<body>
+<div ng-controller="MainControl">
+    当前控制器:
+    <input type="text" ng-model="ctrlContent"><br>
+    自定义指令:
+    <my-dire content="ctrlContent" txt="ctrlContent"></my-dire>
+</div>
+</body>
+</html>

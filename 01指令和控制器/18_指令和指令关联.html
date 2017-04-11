@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="lesson">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/angular.min.js"></script>
+    <style>
+        .class1 {
+            display: block;
+            height: 50px;
+            background: deeppink;
+            color: white;
+            line-height: 50px;
+            margin-top: 5px;
+        }
+
+        .class2 {
+            background: deepskyblue;
+        }
+    </style>
+    <script>
+        angular.module('lesson', [])
+            .directive('hero', [function () {
+                return {
+                    restrict: 'E',
+                    /*
+                    * 这个是指令里特有的函数,该指令就是暴露一些方法给外部调用
+                    *
+                    * */
+                    //作用域独立
+                    scope:{},
+                    controller:function ($scope) {
+                        $scope.props = [];
+                        this.addSpeed = function () {
+                            $scope.props.push('敏捷')
+                        };
+                        this.addStrength = function () {
+                            $scope.props.push('力量')
+                        };
+                        this.addClever = function () {
+                            $scope.props.push('智力')
+                        }
+                    },
+                    link: function ($scope, element, attr) {
+//                       绑定单击事件
+                        element.bind('click', function () {
+                            element.addClass('class2');
+                            console.log($scope.props);
+                        });
+                        element.bind('mouseout', function () {
+                            element.removeClass('class2');
+                        })
+                    }
+
+                }
+            }])
+            .directive('speed',[function () {
+                return{
+                    restrict:'A',
+                    //依赖于hero指令
+                    require:'^hero',
+                    /*
+                    *  参数四：
+                    *     是根据require:'^hero'的之后才会出现的
+                    *     上面相当于依赖hero指令,然后如果使用hero指令内对外开放的方法的话就
+                    *     要生命该形参,heroCtrl表示被依赖的指令hero中的controller属性
+                    *
+                    *     总的来说就是被依赖指令的controller属性
+                    * */
+                    link:function (scope,element,attr,heroCtrl) {
+                        heroCtrl.addSpeed();
+                    }
+                }
+            }])
+            .directive('strength',[function () {
+                return{
+                    restrict:'A',
+                    require:'^hero',
+                    link:function (scope,element,attr,heroCtrl) {
+                        heroCtrl.addStrength();
+                    }
+                }
+            }])
+            .directive('clever',[function () {
+                return{
+                    restrict:'A',
+                    require:'^hero',
+                    link:function (scope,element,attr,heroCtrl) {
+                        heroCtrl.addClever();
+                    }
+                }
+            }])
+    </script>
+</head>
+<body>
+<hero class="class1" speed>恶魔猎手(DH) -- 敏捷</hero>
+<hero class="class1" speed strength>剑圣(BM) -- 敏捷+力量</hero>
+<hero class="class1" speed strength clever>死亡骑士(DK) -- 敏捷 + 力量 + 智力</hero>
+</body>
+</html>

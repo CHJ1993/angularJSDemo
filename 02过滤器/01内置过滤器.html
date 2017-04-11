@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="lesson">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/angular.min.js"></script>
+    <script>
+        angular.module('lesson', [])
+            .controller('MainController', ['$scope', function ($scope) {
+                var self = this;
+                self.money = 123456;
+                self.str = 'abcde';
+                self.str2 = 'ABCDE';
+                self.arr = [22, 33, 44, 11];
+                self.date = new Date().getTime();
+                self.orderStr = 'name';
+                self.personArr = [
+                    {name: 'b', age: 18},
+                    {name: 'ab', age: 15},
+                    {name: 'abc', age: 15},
+                    {name: 'bb', age: 20},
+                    {name: 'a', age: 21},
+                    {name: 'ac', age: 24},
+                    {name: 'bc', age: 17},
+                    {name: 'bc', age: 17},
+                    {name: 'c', age: 25}
+                ]
+            }])
+    </script>
+</head>
+<body ng-controller="MainController as ctrl">
+    <h1>货币格式化处理</h1>
+    <h2>{{ctrl.money|currency}}</h2>
+    <!--自定义币种-->
+    <h2>{{ctrl.money|currency:'RMB ￥'}}</h2>
+    <hr>
+    <h1>字母大小写格式处理</h1>
+    <h2>{{ctrl.str|uppercase}}</h2><!--小写转大写-->
+    <h2>{{ctrl.str2|lowercase}}</h2><!--大写转小写-->
+    <!--显示长度格式处理-->
+    <hr>
+    <h1>显示长度处理</h1>
+    <h2>{{ctrl.str|limitTo:3|uppercase}}</h2>
+    <h2>{{(ctrl.arr|limitTo:2)[0]}}</h2>
+    <hr>
+    <!--设置千分位-->
+    <h1>数字千分位处理</h1>
+    <h2>{{ctrl.money|number:1}}</h2>
+    <hr>
+    <!--日期格式化处理-->
+    <h1>日期格式化处理</h1>
+    <h2>{{ctrl.date|date:'yyyy-MM-dd HH:mm:ss EEEE'}}</h2>
+
+    <hr>
+    <!--JSON格式处理-->
+    <h1>JSON格式处理</h1>
+    <h2>{{ctrl.personArr|json}}</h2>
+    <hr>
+    <!--排序-->
+    <h1>数组内没有对象排序</h1>
+    <h2>{{ctrl.arr|orderBy}}</h2><!--升序-->
+    <h2>{{ctrl.arr|orderBy:order:true}}</h2><!--降序-->
+    <!--配合ng-repeat使用-->
+    <table>
+        <tr ng-repeat="num in ctrl.arr | orderBy:order:true">
+            <td>{{num}}</td>
+        </tr>
+    </table>
+    <hr>
+    <h1>数组内有对象排序</h1>
+    <h2>{{ctrl.arr|orderBy}}</h2><!--升序-->
+    <h2>{{ctrl.arr|orderBy:order:true}}</h2><!--降序-->
+    <!--配合ng-repeat使用-->
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in ctrl.personArr | orderBy:'age':false">
+                <td>{{item.name}}</td>
+                <td>{{item.age}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+
+    <h1>按照条件过滤,排序小功能</h1>
+    过滤条件：<input type="text" ng-model="ctrl.queryFilter">
+    排序条件:
+    <select ng-model="ctrl.orderStr">
+        <option value="name">按照名字排序</option>
+        <option value="age">按照年龄排序</option>
+    </select>
+    <hr>
+    数据展示:
+    <table border="1" cellpadding="0" cellspacing="0">
+        <thead>
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in ctrl.personArr |filter:ctrl.queryFilter |orderBy:ctrl.orderStr:true">
+            <td>{{item.name}}</td>
+            <td>{{item.age}}</td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="lesson">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/angular.min.js"></script>
+    <script>
+        angular.module('lesson', [])
+            .controller('MainController', ['$scope', function ($scope) {
+                $scope.loadData = function () {
+                    console.log('下载数据中.....');
+                }
+            }])
+            .controller('MainController2', ['$scope', function ($scope) {
+                $scope.loadData2 = function () {
+                    console.log('下载数据中2.....');
+                }
+            }])
+            .directive('loader',[function () {
+                return{
+                    restrict:'AE',
+                    /*
+                    * 把要给自定义指令处理的功能和事件响应卸载link 函数内,link函数处于连接阶段
+                    * 参数：
+                    *   参数一：scope: 作用域
+                    *   element:元素
+                    *   attrs:属性
+                    *
+                    * */
+                    link:function (scope,element,attr) {
+                        /*给元素绑定事件*/
+                        element.bind('click',function () {
+                            //这里可以调用作用域内的方法
+//                            scope.loadData();
+                            //还可以使用scope的$apply 方法来调用
+//                            scope.$apply('loadData()');
+                            console.log(attr);
+                            /*通用的写法*/
+                            scope.$apply(attr.loadfn)
+                        })
+                    }
+                }
+            }])
+    </script>
+</head>
+<body>
+    <div ng-controller="MainController">
+        <loader loadFn="loadData()">点击加载数据</loader>
+    </div>
+    <div ng-controller="MainController2">
+        <loader loadFn="loadData2()">点击加载数据2s</loader>
+    </div>
+
+</body>
+</html>

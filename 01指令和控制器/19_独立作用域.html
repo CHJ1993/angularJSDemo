@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="lesson">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/angular.min.js"></script>
+    <script>
+        angular.module('lesson', [])
+            .directive('myDire', [function () {
+                return{
+                    restrict:'E',
+                    scope:{},//独立作用域//你好
+                    template:'<div>' +
+                    '<input type="text" ng-model="userName">{{userName}}' +
+                    '</div>'
+                }
+            }])
+    </script>
+</head>
+<body>
+    <my-dire></my-dire>
+    <my-dire></my-dire>
+    <my-dire></my-dire>
+    <my-dire></my-dire>
+</body>
+</html>
