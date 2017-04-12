@@ -1,38 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bb9ac1f-5034-4b86-b320-14213db490b5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/03_服务/01_反例教程.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/03_服务/02_自定义服务.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/03_服务/03_常用的内置服务.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/03_服务/04_$http的使用.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/03_服务/jsonUserList.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04_单页应用/.idea/04_单页应用.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04_单页应用/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04_单页应用/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04_单页应用/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04_单页应用/css/cart.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04_单页应用/css/home.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04_单页应用/css/index.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04_单页应用/css/market.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04_单页应用/css/mine.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04_单页应用/css/userdetail.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04_单页应用/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04_单页应用/js/controllers.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04_单页应用/js/services.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04_单页应用/lib/angular-css.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04_单页应用/lib/angular-route.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04_单页应用/lib/angular-ui-router.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04_单页应用/lib/angular.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04_单页应用/lib/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04_单页应用/view/cart.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04_单页应用/view/home.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04_单页应用/view/market.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04_单页应用/view/mine.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04_单页应用/view/userDetail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="5bb9ac1f-5034-4b86-b320-14213db490b5" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -79,8 +48,8 @@
       <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/04_单页应用/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+            <state relative-caret-position="230">
+              <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -228,56 +197,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angularJS_demo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angularJS_demo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="04_单页应用" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angularJS_demo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angularJS_demo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="04_单页应用" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angularJS_demo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angularJS_demo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="04_单页应用" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -421,12 +340,12 @@
       <updated>1491788790102</updated>
       <workItem from="1491788791332" duration="20707000" />
       <workItem from="1491873980382" duration="18704000" />
-      <workItem from="1491957394611" duration="21990000" />
+      <workItem from="1491957394611" duration="22630000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61401000" />
+    <option name="totallyTimeSpent" value="62041000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -438,8 +357,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="72" y="28" width="1221" height="704" extended-state="1" />
-    <editor active="true" />
+    <frame x="72" y="28" width="1221" height="704" extended-state="0" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21017514" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871974" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -449,7 +367,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871974" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="CSS-X-Fire" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32871974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -891,8 +809,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/04_单页应用/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        <state relative-caret-position="230">
+          <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
           <folding />
         </state>
       </provider>
