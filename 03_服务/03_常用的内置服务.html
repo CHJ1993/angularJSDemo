@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="lesson">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/angular.min.js"></script>
+    <script>
+        angular.module('lesson',[])
+            .controller('MyCtrl',['$scope','$timeout','$interval',
+                '$location','$http',function (
+                    $scope,$timeout,$interval,$location,$http) {
+//                setTimeout(function () {
+//                    $scope.str = '达康';
+//                },2000)
+                /*内置$timeout可以实现原生timeout效果,并且可以实现数据绑定*/
+                console.log($location);
+                $timeout(function () {
+                    $scope.str = '达康';
+                },2000);
+                $scope.count = 0;
+                var timerId = $interval(function () {
+                    $scope.count++;
+                    if($scope.count>=5){
+                        $interval.cancel(timerId);
+                    }
+                },1000);
+
+//                使用$http服务进行网络查询
+                    $http.get('http://h5.yztctech.net/api/axf/apihome.php')
+                        .success(function (result) {
+                            console.log(result);
+                            $scope.list = result.data.menu;
+                        })
+                        .error(function (error) {
+                            console.log(error);
+                        })
+            }])
+    </script>
+</head>
+<body>
+<div ng-controller="MyCtrl">
+    <h1>{{str}}</h1>
+    <h1>{{count}}</h1>
+    <ul>
+        <li ng-repeat="item in list">
+            {{item.activity.name}}
+        </li>
+    </ul>
+</div>
+</body>
+</html>

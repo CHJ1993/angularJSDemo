@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="lesson">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/angular.min.js"></script>
+    <script>
+        angular.module('lesson', [])
+            .controller('MainController', ['$scope', '$timeout','userSever', function ($scope,$timeout, userSever) {
+                var self = this;
+                $scope.name = '';
+                var timerID ='';
+                //监听
+                $scope.$watch('userName',function (newUserName) {
+                    console.log(newUserName);
+                    if(newUserName){
+                        $timeout.cancel(timerID);
+                        timerID = $timeout(function () {
+//                            userSever.getList().success(function (result) {
+//                                $scope.users = result.users;
+//                            });
+                            $scope.name = newUserName;
+                        },500);
+                    }
+                });
+                userSever.getList().success(function (result) {
+                    $scope.users = result.users;
+                });
+//                $scope.users = userSever.getList().success;
+            }])
+            .factory('userSever', ['$http', function ($http) {
+                function getData() {
+                    return $http.get('./jsonUserList.json');
+                }
+
+                return {
+                    getList: getData
+                }
+            }]);
+    </script>
+</head>
+<body ng-controller="MainController">
+<h1>搜索用户</h1>
+<input type="text" ng-model="userName" placeholder="输入用户名">
+<ul>
+    <li ng-repeat="item in users |filter:name">
+        {{item.username}}
+    </li>
+</ul>
+</body>
+</html>

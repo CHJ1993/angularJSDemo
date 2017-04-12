@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="lesson">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/angular.min.js"></script>
+    <script>
+        angular.module('lesson',[])
+            .controller('MainCtrl',['$scope',function ($scope) {
+                $scope.pageName = 'first';
+                $scope.changePage = function (pageName) {
+                    $scope.pageName = pageName;
+                };
+            }])
+            .controller('SubCtrl',['$scope',function ($scope) {
+                $scope.list = [
+                    {id:1,label:'第一项'},
+                    {id:2,label:'第二项'},
+                    {id:3,label:'第三项'},
+                    {id:4,label:'第四项'},
+                    {id:5,label:'第五项'},
+                    {id:6,label:'第六项'}
+                ];
+                $scope.addItem = function () {
+                    $scope.list.push({
+                        id:$scope.list.length+1,
+                        label:'new Item '+($scope.list.length+1)
+                    })
+                }
+            }])
+    </script>
+</head>
+<body>
+    <div ng-controller="MainCtrl">
+        <h1>页面切换,是否能保存每个页面保存的值?</h1>
+        <input type="button" value="first Page" ng-click="changePage('first')">
+        <input type="button" value="second Page" ng-click="changePage('second')">
+        <div ng-switch on="pageName">
+            <div ng-switch-when="first" ng-controller="SubCtrl">
+                <h1>第一个页面</h1>
+                <ul>
+                    <li ng-repeat="item in list">
+                        {{item.id}}  {{item.label}}
+                    </li>
+                    <input type="button" value="1添加一项" ng-click="addItem()">
+                </ul>
+            </div>
+            <div ng-switch-when="second" ng-controller="SubCtrl">
+                <h1>第二个页面</h1>
+                <ul>
+                    <li ng-repeat="item in list">
+                        {{item.id}}  {{item.label}}
+                    </li>
+                    <input type="button" value="2添加一项" ng-click="addItem()">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

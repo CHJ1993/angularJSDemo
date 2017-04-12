@@ -1,0 +1,9 @@
+<div id="home">
+    <h1>首页</h1>
+    <h1>Ctrl:  {{pageName}}</h1>
+    <ul>
+        <li ng-repeat="item in userList">
+            <a href="#/detail/{{item.userId}}"><span>姓名：{{item.userName}}</span><span>年龄:{{item.age}}</span></a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0"></meta>-->
+    <title>single Page </title>
+    <script src="../lib/angular.min.js"></script>
+    <!--导入路由　注意：必须在主入口文件之前导入-->
+    <script src="../lib/angular-route.js"></script>
+    <script src="../lib/angular-css.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<!--
+ng-view:　做单页应用进行切换的容器指令
+-->
+<div ng-view>
+
+</div>
+<!--<button ng-click="ask()">点击测试</button>-->
+<footer id="tabBar" ng-hide="rootFooterHide">
+    <ul>
+        <!--穿参数-->
+        <li><a href="#/home">首页</a></li>
+        <li><a href="#/market/小学/18">闪送超市</a></li>
+        <li><a href="#/cart">购物车</a></li>
+        <li><a href="#/mine">我的</a></li>
+    </ul>
+</footer>
+<!--导入主入口文件-->
+<script src="app.js"></script>
+<script src="js/services.js"></script>
+<script src="js/controllers.js"></script>
+</body>
+</html>
